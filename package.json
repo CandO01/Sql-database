@@ -1,0 +1,15 @@
+{
+  "name": "fullstack-course-scrimba",
+  "version": "1.0.0",
+  "description": "creating and managing database",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Matthew",
+  "license": "ISC",
+  "dependencies": {
+    "@electric-sql/pglite": "^0.3.6"
+  }
+}
