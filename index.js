@@ -11,12 +11,21 @@ import fs from 'fs'
     await db.exec(insertCarsData);
 
     // run the changes made in the DM section
-    const crudOperations = fs.readFileSync('crud-operations.sql', 'utf8')
-    await db.exec(crudOperations)
+    const crudOperations = fs.readFileSync('crud-operations.sql', 'utf8');
+    await db.exec(crudOperations);
 
-    const populateTables = fs.readFileSync('populate-tables.sql', 'utf8')
-    await db.exec(populateTables)
 
+    // To populate the car tables
+    const populateTables = fs.readFileSync('populate-tables.sql', 'utf8');
+    await db.exec(populateTables);
+
+    // Alter the table by adding extra column to the table
+    const alterTable = fs.readFileSync('alter-table.sql', 'utf8');
+    await db.exec(alterTable);
+
+    // New data added 
+    const insertNewData = fs.readFileSync('insert-new-data.sql', 'utf8');
+    await db.exec(insertNewData);
 
     // Load the SQL query file
     const query = fs.readFileSync('query.sql', 'utf8');
